@@ -7,7 +7,9 @@ Turn the raw marketing dataset into a reliable, analysis-ready table: no duplica
 ### Input and output
 Input :	data/marketing_campaign.csv	Raw dataset, ~ 2240 customers
 Output :	data/marketing_campaign_clean.csv	Cleaned dataset used by notebooks 02 to 04 and the dashboard
-Dataset variables
+
+
+### Dataset variables
 
 ### Group	Variables
 Campaigns	AcceptedCmp1-AcceptedCmp5, Response (target: last campaign)
@@ -18,7 +20,6 @@ Activity	Recency (days since last purchase)
 
 ### Cleaning steps and decisions
 
-Step	What was done	Why	Rows / values affected
 Exact duplicates	df.duplicated() then drop_duplicates()	Duplicates inflate counts and totals
 Data types	DtCustomer converted to datetime, Income and spending to numeric, binary columns to integers	Enables date and numeric operations dates not converted
 Negative values	Set to missing (NaN) instead of dropping the row	No returns logic in this dataset, a negative spend or count is invalid	
